@@ -1,0 +1,4 @@
+
+#+BEGIN_SRC bash
+docker run -d --name zookeeper tianon/zookeeper
+#+END_SRC

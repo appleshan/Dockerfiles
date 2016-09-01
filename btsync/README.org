@@ -1,0 +1,3 @@
+#+TITLE: btsync
+
+[[https://www.getsync.com/][BitTorrent Sync]] is a fast, simple, and secure file syncing for IT and individuals.
