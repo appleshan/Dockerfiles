@@ -1,3 +1,31 @@
 #+TITLE: infer
 
 A Docker-ized way of running Facebook's Infer static analysis tools
+
+* docker images for Infer
+
+This directory, =docker/= inside the Infer repo, contains a docker file to install
+Infer within a [[https://www.docker.com/][docker]] container. This can be used to quickly try Infer or to
+deploy Infer.
+
+* Pre-requisites
+
+To use this docker image, you will need a working docker installation.
+See the instructions for [[http://docs.docker.com/linux/step_one/][Linux]] or [[http://docs.docker.com/mac/step_one/][MacOSX]] as appropriate.
+
+* How to use
+
+This docker file will use the latest [[https://github.com/facebook/infer/releases][released]] version of Infer.
+
+1. Get docker running, e.g. using Docker Quickstart Terminal.
+2. cd to the directory `docker/`,
+3. Build Infer in docker container and try on an example:
+
+#+BEGIN_SRC sh
+# Build Infer; 20min or so; to be executed from docker/ in the Infer repo
+./run.sh
+# you should now be inside the docker container with a shell prompt, e.g.
+# "root@5c3b9af90d59:/infer/examples# "
+cd android_hello/
+infer -- ./gradlew build
+#+END_SRC
