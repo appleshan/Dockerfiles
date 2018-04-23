@@ -1,12 +1,17 @@
 FROM alpine:latest
 MAINTAINER AppleShan <apple.shan@gmail.com>
 
+# Define working directory.
 WORKDIR /app
 VOLUME /app
-COPY startup.sh /startup.sh
+
+# Add MySQL configuration
+COPY config/ /etc/mysql/conf.d/
 
 RUN apk add --update mysql mysql-client && rm -f /var/cache/apk/*
-COPY my.cnf /etc/mysql/my.cnf
 
+# Expose ports.
 EXPOSE 3306
-CMD ["/startup.sh"]
+
+# Define default command.
+CMD ["/app/run.sh"]

@@ -5,6 +5,6 @@ docker run -it \
 -v $(pwd):/app \
 -e MYSQL_DATABASE=yk_questionnaire \
 -e MYSQL_USER=root \
--e MYSQL_PASSWORD=root \
--e MYSQL_ROOT_PASSWORD=root \
+-e MYSQL_PASSWORD=111111 \
+-e MYSQL_ROOT_PASSWORD=111111 \
 appleshan/alpine-mysql
