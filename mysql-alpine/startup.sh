@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -rf /app/mysql
+# rm -rf /app/mysql
 
 if [ -d /app/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"
